@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Student Management System</h2>
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h3 id="studentHeader">Student Information Form</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="studentForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="stdname">Student Name</label>
+                                        <input type="text" id="stdname" class="form-control"
+                                            placeholder="Enter Student Name" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="email">Email Address</label>
+                                        <input type="email" id="email" class="form-control" placeholder="Enter Email"
+                                            required>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="age">Age</label>
+                                        <input type="number" id="age" class="form-control" placeholder="Enter Age"
+                                            required>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="number">Mobile Number</label>
+                                        <input type="tel" id="number" minlength="10" maxlength="10" class="form-control"
+                                            placeholder="Enter Mobile Number" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="course">Course</label>
+                                        <select id="course" class="form-control" required>
+                                            <option value="">Select Course</option>
+                                            <option value="HTML">HTML</option>
+                                            <option value="CSS">CSS</option>
+                                            <option value="JavaScript">JavaScript</option>
+                                            <option value="React">React</option>
+                                            <option value="Node.js">Node.js</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="isActive">Status</label>
+                                        <select id="isActive" class="form-control">
+                                            <option value="true">Active</option>
+                                            <option value="false">Inactive</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-between">
+                                <button type="submit" id="addStudentBtn" class="btn btn-primary"> Add Student </button>
+                                <button type="button" id="updateStudentBtn" class="btn btn-success d-none"> Update
+                                    Student</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-responsive mt-4">
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr class="text-center">
+                        <th>Id</th>
+                        <th>Student Name</th>
+                        <th>Email</th>
+                        <th>Age</th>
+                        <th>Mobile</th>
+                        <th>Course</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="studentList">
+                    <tr>
+                        <td>1</td>
+                        <td>John</td>
+                        <td>jd@gmail.com</td>
+                        <td>23</td>
+                        <td>876543219</td>
+                        <td>BCA</td>
+                        <td>Active</td>
+                        <td class="d-flex justify-content-between">
+                            <button class="btn-info">Edit</button>
+                            <button class="btn-danger">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="spinner d-none" id="spinner">
+        <div class="spinner-border text-light" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./assets/js/app.js"></script>
+</body>
+
+</html>
